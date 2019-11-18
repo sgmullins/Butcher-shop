@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="./responsive-FINISHED.css">
+    <title>Responsive Website!</title>
+</head>
+
+<body>
+
+
+    <nav class="menu">
+        <button aria-expanded="false" aria-controls="menu-list">
+            <span class="open">☰</span>
+            <span class="close">×</span>
+            Menu
+        </button>
+        <ul id="menu-list">
+            <li>
+                <a href="">Tacos</a>
+            </li>
+            <li>
+                <a href="">Beers</a>
+            </li>
+            <li>
+                <a href="">Wines</a>
+            </li>
+            <li>
+                <a href="">Desserts</a>
+            </li>
+            <li>
+                <a href="">Reservations</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const navButton = document.querySelector('button[aria-expanded]');
+
+        function toggleNav({
+            target
+        }) {
+            const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+            navButton.setAttribute('aria-expanded', !expanded);
+        }
+
+        navButton.addEventListener('click', toggleNav);
+    </script>
+</body>
+
+</html>
